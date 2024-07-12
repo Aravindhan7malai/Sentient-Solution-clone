@@ -194,6 +194,7 @@ a:hover {
 }
 
 .feature-card {
+    
     flex: 1;
     padding: 20px;
     margin: 0 10px;
@@ -202,6 +203,7 @@ a:hover {
     border-radius: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
+
 
 .feature-card:hover {
     transform: translateY(-5px);
@@ -382,3 +384,376 @@ a:hover {
 
 
 /*******************Service-1 Sections Ends***************/
+
+/*************Service-2********************/
+.service_2 {
+    background-color: #f9f9f9; /* Different background color */
+    padding: 50px 20px;
+}
+
+.service_2-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service_2-contents {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.service_2-contents h1 {
+    font-size: 2.5em; /* Bigger font size for h1 */
+    margin-bottom: 20px;
+}
+
+.service_2-contents p {
+    font-size: 1.2em; /* Suitable font size for description */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service_2-cards {
+    margin-bottom: 20px;
+    padding:15px;
+   
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.service_2-cards > div {
+    background-color: white;
+    padding: 15px;
+    border-bottom: 2px solid #002366; /* Line at the bottom of each card */
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service_2-cards:hover {
+    background-color: #002366; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+    /* background-color: #ff4d4d; /* Change background color on hover */
+    /* color: white; Change text color on hover */ 
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.service_2-contents button {
+    background-color: #ff4d4d; /* Initial button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.service_2-contents button:hover {
+    background-color: #002366; /* Different hover color */
+}
+
+.service_2-image {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.service_2-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/****************Service-2 Ends*****************/
+
+
+/******************Offer section starts************************/
+
+.offer {
+    background-color: #f0f0f0; /* Light background color */
+    padding: 50px 20px;
+    text-align: center; /* Center align the content */
+}
+
+.offer-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+.offer-content {
+    margin-bottom: 40px;
+}
+
+.offer-content h1 {
+    font-size: 3em; /* Bigger font size for h1 */
+    margin-bottom: 20px;
+}
+
+.offer-content p {
+    font-size: 1.2em; /* Suitable font size for description */
+    line-height: 1.6;
+}
+
+.offer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.offer-card {
+    width: calc(23.33% - 20px); /* Adjust width for three cards in a row with margin */
+    margin: 10px;
+    background-color: #ffffff; /* Card background color */
+    padding: 20px;
+    text-align: left;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.offer-card:hover {
+    background-color: #002366; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.offer-card h1 {
+    font-size: 1.5em; /* Font size for card heading */
+    margin-bottom: 10px;
+}
+
+.offer-card p {
+    font-size: 1em; /* Font size for card description */
+    line-height: 1.6;
+}
+
+
+
+/***********************Offer section ends***********************/
+
+/*******************Testimonials*********************/
+
+
+.testimonials {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+    /* background-color: #002366; */
+}
+.testimonials{
+    background-color: #002366;
+}
+.testimonials h1{
+    color: white;
+}
+
+.testimonial-container {
+    display: flex;
+    overflow: hidden;
+    background-color: #aab0b8;
+}
+
+.testimonial {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: none;
+}
+
+.testimonial.active {
+    display: block;
+}
+
+.testimonial-text {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.testimonial-author {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.testimonial-nav {
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #ff4d4d; 
+}
+
+button.prev, button.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #002366;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    border: none;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #ff4d4d; 
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+
+/***************Testimonials ends*********************/
+
+
+/********************Brands**********************/
+
+.brands{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9e4e4;
+}
+.brands-container{
+    width:700px;
+    font-size: 25px;
+    text-align: center;
+}
+
+/****************Brands Ending**********************/
+
+/**************Start now*********************/
+
+.start_now{
+    margin: 0;
+    text-align: center;
+    background-color: #002366;
+    padding: 20px 20px;
+    color: white;
+}
+.start_now h1{
+    font-size: 40px;
+}
+.start_now p{
+    font-size: 20px;
+    /* width: 200px; */
+}
+.start_now button{
+    padding:10px 15px;
+    font-size: 18px;
+    background-color: #002366;
+    color:white;
+    border: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    /* transition: background-color 0.3s ease, color 0.3s ease; */
+}
+.start_now button:hover{
+    background-color: #ff4d4d;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/*****************Start Now Ending**************/
+
+/**************Blogs start*************************/
+
+.blogs {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Background color for the section */
+}
+
+.blogs-head {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.blogs-head h1 {
+    font-size: 2.5em; /* Bigger font size for the header */
+}
+
+.blogs-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+.blogs-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.blogs-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    min-width: 300px;
+    max-width: calc(33.33% - 20px); /* Adjusting for spacing */
+}
+
+.blogs-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blogs-image img {
+    width: 100%;
+    height: auto;
+}
+
+.blogs-topic {
+    padding: 20px;
+}
+
+.blogs-topic h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blogs-timer {
+    padding: 0 20px;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blogs-descrip {
+    padding: 20px;
+    color: #555;
+}
+
+.blogs-card:hover .blogs-topic h1, .blogs-card:hover .blogs-descrip {
+    color: #002366; /* Change color on hover */
+    cursor: pointer;
+    /* background-color: #725454; */
+   
+}
+
+
+
+/*******************BLogs Ends***********************/

@@ -2,23 +2,33 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
 /*******Header section***********/
 
+
 .header {
-    background-color: #606977; /* Dark blue background for the header */
+    background-color: #606977;
+    /* Dark blue background for the header */
     padding: 10px 20px;
+    /* position: fixed;
+    top: 0;
+    width: 100%; */
+    /* background-color: #002366; */
+    /* z-index: 1000;  */
 }
+
 
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .logo {
     font-size: 1.5em;
     font-weight: bold;
-    color: #ff4d4d; /* Reddish color for the logo */
+    color: #ff4d4d;
+    /* Reddish color for the logo */
 }
 
 nav {
@@ -30,7 +40,8 @@ ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-between; /* Ensure equal spacing between items */
+    justify-content: space-between;
+    /* Ensure equal spacing between items */
 }
 
 li {
@@ -39,16 +50,19 @@ li {
 
 a {
     text-decoration: none;
-    color: white; /* White text color for nav links */
+    color: white;
+    /* White text color for nav links */
     font-size: 1em;
 }
 
 a:hover {
-    color: #ff4d4d; /* Reddish color on hover */
+    color: #ff4d4d;
+    /* Reddish color on hover */
 }
 
 .button {
-    background-color: #ff4d4d; /* Reddish color for buttons */
+    background-color: #ff4d4d;
+    /* Reddish color for buttons */
     border: none;
     color: white;
     padding: 8px 16px;
@@ -61,9 +75,72 @@ a:hover {
     transition: background-color 0.3s ease;
 }
 
+
 .button:hover {
-    background-color: #e60000; /* Darker red on hover */
+    background-color: #e60000;
+    /* Darker red on hover */
 }
+
+.menu-icon {
+    display: none;
+    /* Initially hide the menu icon */
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+@media (max-width: 920px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo {
+        order: 1;
+        margin-right: auto;
+    }
+
+    nav {
+        order: 3;
+        margin-left: auto;
+        display: none;
+        /* Hide the nav initially */
+    }
+
+    .menu-icon {
+        order: 2;
+        display: block;
+        /* Show the menu icon */
+        cursor: pointer;
+        color: white;
+        font-size: 1.5em;
+        margin-left: auto;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin: 0 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 1em;
+    }
+
+    .button,
+    .pam-button {
+        display: none;
+        /* Hide the buttons initially */
+    }
+}
+
 
 /*******Header section Ends***********/
 
@@ -73,13 +150,14 @@ a:hover {
 /********Hero section*******/
 
 .hero {
-    background-color: #002366; /* Match background color with the header */
-    color: white; /* White text color */
+    background-color: #002366;
+    color: white;
     padding: 50px 20px;
 }
 
 .hero-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -87,29 +165,37 @@ a:hover {
 .left_hero {
     flex: 1;
     padding-right: 20px;
+    text-align: center;
+    /* Center text on smaller screens */
 }
 
 .right_hero {
     flex: 1;
     padding-left: 20px;
+    text-align: center;
+    /* Center image on smaller screens */
 }
 
 .left_hero h1 {
-    font-size: 3em; /* Bigger font size for h1 */
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
 .left_hero p {
-    font-size: 1.2em; /* Suitable font size for description */
+    font-size: 1.2em;
     line-height: 1.6;
     margin-top: 10px;
 }
 
 .left_hero_buttons {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* Center buttons on smaller screens */
 }
 
 .left_hero_buttons button {
-    background-color: #ff4d4d; /* Initial button color */
+    background-color: #ff4d4d;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -121,21 +207,69 @@ a:hover {
 }
 
 .left_hero_buttons button:first-child:hover {
-    background-color: #e60000; /* Different hover color for first button */
+    background-color: #e60000;
 }
 
 .left_hero_buttons button:last-child:hover {
-    background-color: #00bfff; /* Different hover color for second button */
+    background-color: #00bfff;
 }
 
 .right_hero img {
     max-width: 100%;
-    max-height: 600px; /* Maximum height for the image */
-    object-fit: cover; /* Ensure the image scales properly */
+    max-height: 600px;
+    object-fit: cover;
     height: auto;
     border-radius: 10px;
     opacity: 0.6;
 }
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left_hero,
+    .right_hero {
+        flex: auto;
+        padding: 0;
+        text-align: center;
+    }
+
+    .left_hero {
+        order: 2;
+        /* Move left content below right content */
+    }
+
+    .left_hero h1 {
+        font-size: 2.5em;
+        /* Adjust heading font size */
+    }
+
+    .left_hero_buttons {
+        margin-top: 15px;
+    }
+
+    .left_hero_buttons button {
+        padding: 8px 16px;
+        /* Adjust button padding */
+        margin-right: 8px;
+        /* Adjust button margin */
+    }
+
+    .right_hero img {
+        max-height: 400px;
+        /* Adjust max-height for image */
+        border-radius: 0;
+        /* Remove border radius */
+        opacity: 1;
+        /* Adjust opacity */
+    }
+}
+
+
+
+
 
 /********Hero Section ending*****/
 
@@ -143,9 +277,8 @@ a:hover {
 /*******Feature section*******/
 
 
-
 .feature {
-    background-color: #f5f5f5; /* Light background color to differentiate from header and hero */
+    background-color: #f5f5f5;
     padding: 50px 20px;
 }
 
@@ -156,6 +289,7 @@ a:hover {
 
 .feature-1 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
@@ -163,6 +297,7 @@ a:hover {
 
 .feature-image {
     flex: 1;
+    max-width: 50%;
     padding-right: 20px;
 }
 
@@ -174,50 +309,51 @@ a:hover {
 
 .feature-content {
     flex: 1;
+    max-width: 50%;
     padding-left: 20px;
 }
 
 .feature-content h1 {
-    font-size: 2.5em; /* Bigger font size for h1 */
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
 .feature-content p {
-    font-size: 1.2em; /* Suitable font size for description */
+    font-size: 1.2em;
     line-height: 1.6;
 }
 
 .feature-2 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 40px;
 }
 
 .feature-card {
-    
     flex: 1;
+    margin: 0 5px;
     padding: 20px;
-    margin: 0 10px;
     background-color: white;
-    border: 1px solid #ddd; /* Border for the card */
+    border: 1px solid #ddd;
     border-radius: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-
 .feature-card:hover {
     transform: translateY(-5px);
-    background-color: #ff4d4d; /* Background color change on hover */
-    color: white; /* Text color change on hover */
-    border-color: #e60000; /* Border color change on hover */
+    background-color: #ff4d4d;
+    color: white;
+    border-color: #e60000;
 }
 
 .feature-3 {
     text-align: center;
+    margin-top: 20px;
 }
 
 .feature-3 button {
-    background-color: #002366; /* Initial button color */
+    background-color: #002366;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -228,8 +364,54 @@ a:hover {
 }
 
 .feature-3 button:hover {
-    background-color: #ff4d4d; /* Different hover color */
+    background-color: #ff4d4d;
 }
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 1024px) {
+    .feature-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-image,
+    .feature-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .feature-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-card {
+        flex-basis: calc(50% - 10px);
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-content h1 {
+        font-size: 2rem;
+    }
+
+    .feature-content p {
+        font-size: 1rem;
+    }
+
+    .feature-2 {
+        flex-direction: column;
+    }
+
+    .feature-card {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+}
+
 
 
 
@@ -240,7 +422,8 @@ a:hover {
 /****************Support section starts*********************/
 
 .support {
-    background-color: #d8d3d3; /* Different background color */
+    background-color: #d8d3d3;
+    /* Different background color */
     padding: 50px 20px;
 }
 
@@ -258,18 +441,21 @@ a:hover {
 }
 
 .support-content h1 {
-    font-size: 2.5em; /* Bigger font size for h1 */
+    font-size: 2.5em;
+    /* Bigger font size for h1 */
     margin-bottom: 20px;
 }
 
 .support-content p {
-    font-size: 1.2em; /* Suitable font size for description */
+    font-size: 1.2em;
+    /* Suitable font size for description */
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .support-content button {
-    background-color: #002366; /* Initial button color */
+    background-color: #002366;
+    /* Initial button color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -280,7 +466,8 @@ a:hover {
 }
 
 .support-content button:hover {
-    background-color: #ff4d4d; /* Different hover color */
+    background-color: #ff4d4d;
+    /* Different hover color */
 }
 
 .support-image {
@@ -294,6 +481,59 @@ a:hover {
     border-radius: 10px;
 }
 
+@media (max-width: 1200px) {
+    .support-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .support-content,
+    .support-image {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .support-content h1 {
+        font-size: 2.2em;
+        /* Decrease font size for h1 */
+        margin-bottom: 15px;
+    }
+
+    .support-content p {
+        font-size: 1.1em;
+        /* Decrease font size for paragraph */
+        margin-bottom: 15px;
+    }
+
+    .support-content button {
+        padding: 8px 16px;
+        /* Adjust button padding */
+        font-size: 1em;
+        /* Decrease font size for button */
+    }
+}
+
+@media (max-width: 768px) {
+    .support-content h1 {
+        font-size: 1.8em;
+        /* Further decrease font size for h1 */
+    }
+
+    .support-content p {
+        font-size: 1em;
+        /* Further decrease font size for paragraph */
+    }
+
+    .support-content button {
+        font-size: 0.9em;
+        /* Further decrease font size for button */
+    }
+}
+
+
+
 
 
 /****************Support Section Ends**********************/
@@ -302,7 +542,8 @@ a:hover {
 /*****************Service-1 Sections starts*****************/
 
 .service_1 {
-    background-color: #f0f8ff; /* Light background color to differentiate from other sections */
+    background-color: #f0f8ff;
+    /* Light background color to differentiate from other sections */
     padding: 50px 20px;
 }
 
@@ -331,12 +572,14 @@ a:hover {
 }
 
 .service_1-contents h1 {
-    font-size: 2.5em; /* Bigger font size for h1 */
+    font-size: 2.5em;
+    /* Bigger font size for h1 */
     margin-bottom: 20px;
 }
 
 .service_1-contents p {
-    font-size: 1.2em; /* Suitable font size for description */
+    font-size: 1.2em;
+    /* Suitable font size for description */
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -345,29 +588,33 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.service_1-cards > div {
+.service_1-cards>div {
     /* background-color: white; */
     padding: 15px;
     /* border-bottom: 2px solid #ff4d4d; Line at the bottom of each card */
     margin-bottom: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-.service_1-cards{
-    padding:15px;
-   
+
+.service_1-cards {
+    padding: 15px;
+
     border: 1px solid #ddd;
     border-radius: 10px;
 }
 
 
 .service_1-cards:hover {
-    background-color: #ff4d4d; /* Change background color on hover */
-    color: white; /* Change text color on hover */
+    background-color: #ff4d4d;
+    /* Change background color on hover */
+    color: white;
+    /* Change text color on hover */
     transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .service_1-contents button {
-    background-color: #002366; /* Initial button color */
+    background-color: #002366;
+    /* Initial button color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -378,8 +625,69 @@ a:hover {
 }
 
 .service_1-contents button:hover {
-    background-color: #ff4d4d; /* Different hover color */
+    background-color: #ff4d4d;
+    /* Different hover color */
 }
+
+@media (max-width: 1200px) {
+    .service_1-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service_1-image,
+    .service_1-contents {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .service_1-image {
+        margin-bottom: 20px;
+        /* Add margin bottom to image for spacing */
+    }
+
+    .service_1-contents {
+        margin-bottom: 20px;
+        /* Add margin bottom to contents for spacing */
+    }
+
+    .service_1-contents h1 {
+        font-size: 2em;
+        /* Decrease font size for h1 */
+        margin-bottom: 15px;
+    }
+
+    .service_1-contents p {
+        font-size: 1.1em;
+        /* Decrease font size for paragraph */
+        margin-bottom: 15px;
+    }
+
+    .service_1-cards {
+        padding: 10px;
+        /* Adjust padding for cards */
+    }
+}
+
+@media (max-width: 768px) {
+    .service_1-contents h1 {
+        font-size: 1.8em;
+        /* Further decrease font size for h1 */
+    }
+
+    .service_1-contents p {
+        font-size: 1em;
+        /* Further decrease font size for paragraph */
+    }
+
+    .service_1-contents button {
+        font-size: 0.9em;
+        /* Further decrease font size for button */
+    }
+}
+
 
 
 
@@ -387,7 +695,8 @@ a:hover {
 
 /*************Service-2********************/
 .service_2 {
-    background-color: #f9f9f9; /* Different background color */
+    background-color: #f9f9f9;
+    /* Different background color */
     padding: 50px 20px;
 }
 
@@ -405,42 +714,48 @@ a:hover {
 }
 
 .service_2-contents h1 {
-    font-size: 2.5em; /* Bigger font size for h1 */
+    font-size: 2.5em;
+    /* Bigger font size for h1 */
     margin-bottom: 20px;
 }
 
 .service_2-contents p {
-    font-size: 1.2em; /* Suitable font size for description */
+    font-size: 1.2em;
+    /* Suitable font size for description */
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .service_2-cards {
     margin-bottom: 20px;
-    padding:15px;
-   
+    padding: 15px;
+
     border: 1px solid #ddd;
     border-radius: 10px;
 }
 
-.service_2-cards > div {
+.service_2-cards>div {
     background-color: white;
     padding: 15px;
-    border-bottom: 2px solid #002366; /* Line at the bottom of each card */
+    border-bottom: 2px solid #002366;
+    /* Line at the bottom of each card */
     margin-bottom: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .service_2-cards:hover {
-    background-color: #002366; /* Change background color on hover */
-    color: white; /* Change text color on hover */
+    background-color: #002366;
+    /* Change background color on hover */
+    color: white;
+    /* Change text color on hover */
     /* background-color: #ff4d4d; /* Change background color on hover */
-    /* color: white; Change text color on hover */ 
+    /* color: white; Change text color on hover */
     transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .service_2-contents button {
-    background-color: #ff4d4d; /* Initial button color */
+    background-color: #ff4d4d;
+    /* Initial button color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -451,7 +766,8 @@ a:hover {
 }
 
 .service_2-contents button:hover {
-    background-color: #002366; /* Different hover color */
+    background-color: #002366;
+    /* Different hover color */
 }
 
 .service_2-image {
@@ -465,20 +781,79 @@ a:hover {
     border-radius: 10px;
 }
 
+@media (max-width: 1200px) {
+    .service_2-container {
+        flex-direction: column-reverse;
+        /* Stack items vertically, image below content */
+        align-items: center;
+    }
+
+    .service_2-contents,
+    .service_2-image {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .service_2-contents {
+        margin-bottom: 20px;
+        /* Add margin bottom for spacing */
+    }
+
+    .service_2-contents h1 {
+        font-size: 2em;
+        /* Decrease font size for h1 */
+        margin-bottom: 15px;
+    }
+
+    .service_2-contents p {
+        font-size: 1.1em;
+        /* Decrease font size for paragraph */
+        margin-bottom: 15px;
+    }
+
+    .service_2-cards {
+        padding: 10px;
+        /* Adjust padding for cards */
+    }
+}
+
+@media (max-width: 768px) {
+    .service_2-contents h1 {
+        font-size: 1.8em;
+        /* Further decrease font size for h1 */
+    }
+
+    .service_2-contents p {
+        font-size: 1em;
+        /* Further decrease font size for paragraph */
+    }
+
+    .service_2-contents button {
+        font-size: 0.9em;
+        /* Further decrease font size for button */
+    }
+}
+
+
 /****************Service-2 Ends*****************/
 
 
 /******************Offer section starts************************/
 
 .offer {
-    background-color: #f0f0f0; /* Light background color */
+    background-color: #f0f0f0;
+    /* Light background color */
     padding: 50px 20px;
-    text-align: center; /* Center align the content */
+    text-align: center;
+    /* Center align the content */
 }
 
 .offer-container {
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
+    /* Center the container */
 }
 
 .offer-content {
@@ -486,12 +861,14 @@ a:hover {
 }
 
 .offer-content h1 {
-    font-size: 3em; /* Bigger font size for h1 */
+    font-size: 3em;
+    /* Bigger font size for h1 */
     margin-bottom: 20px;
 }
 
 .offer-content p {
-    font-size: 1.2em; /* Suitable font size for description */
+    font-size: 1.2em;
+    /* Suitable font size for description */
     line-height: 1.6;
 }
 
@@ -502,9 +879,11 @@ a:hover {
 }
 
 .offer-card {
-    width: calc(23.33% - 20px); /* Adjust width for three cards in a row with margin */
+    width: calc(23.33% - 20px);
+    /* Adjust width for three cards in a row with margin */
     margin: 10px;
-    background-color: #ffffff; /* Card background color */
+    background-color: #ffffff;
+    /* Card background color */
     padding: 20px;
     text-align: left;
     border-radius: 10px;
@@ -512,19 +891,72 @@ a:hover {
 }
 
 .offer-card:hover {
-    background-color: #002366; /* Background color on hover */
-    color: white; /* Text color on hover */
+    background-color: #002366;
+    /* Background color on hover */
+    color: white;
+    /* Text color on hover */
 }
 
 .offer-card h1 {
-    font-size: 1.5em; /* Font size for card heading */
+    font-size: 1.5em;
+    /* Font size for card heading */
     margin-bottom: 10px;
 }
 
 .offer-card p {
-    font-size: 1em; /* Font size for card description */
+    font-size: 1em;
+    /* Font size for card description */
     line-height: 1.6;
 }
+
+@media (max-width: 1200px) {
+    .offer-content h1 {
+        font-size: 2.5em;
+        /* Decrease font size for h1 */
+        margin-bottom: 15px;
+    }
+
+    .offer-content p {
+        font-size: 1.1em;
+        /* Decrease font size for paragraph */
+    }
+
+    .offer-cards {
+        justify-content: center;
+        /* Center align cards */
+    }
+
+    .offer-card {
+        width: calc(31.33% - 20px);
+        /* Adjust width for three cards in a row with margin */
+        margin: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .offer-content h1 {
+        font-size: 2em;
+        /* Further decrease font size for h1 */
+    }
+
+    .offer-content p {
+        font-size: 1em;
+        /* Further decrease font size for paragraph */
+    }
+
+    .offer-card {
+        width: calc(48% - 20px);
+        /* Adjust width for two cards in a row with margin */
+    }
+}
+
+@media (max-width: 576px) {
+    .offer-card {
+        width: calc(100% - 20px);
+        /* Full width for single column on smaller screens */
+    }
+}
+
 
 
 
@@ -532,19 +964,13 @@ a:hover {
 
 /*******************Testimonials*********************/
 
-
 .testimonials {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
     padding: 50px 20px;
     text-align: center;
-    /* background-color: #002366; */
-}
-.testimonials{
     background-color: #002366;
-}
-.testimonials h1{
     color: white;
 }
 
@@ -552,6 +978,9 @@ a:hover {
     display: flex;
     overflow: hidden;
     background-color: #aab0b8;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
 }
 
 .testimonial {
@@ -586,15 +1015,16 @@ a:hover {
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.3s ease;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .dot.active {
-    background-color: #ff4d4d; 
+    background-color: #ff4d4d;
 }
 
-button.prev, button.next {
+button.prev,
+button.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -606,11 +1036,11 @@ button.prev, button.next {
     font-size: 18px;
     transition: background-color 0.3s ease;
     border: none;
-    /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
-button.prev:hover, button.next:hover {
-    background-color: #ff4d4d; 
+button.prev:hover,
+button.next:hover {
+    background-color: #ff4d4d;
 }
 
 button.prev {
@@ -621,67 +1051,203 @@ button.next {
     right: 0;
 }
 
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 30px 10px;
+    }
+
+    .testimonial-text {
+        font-size: 1.2em;
+    }
+
+    .testimonial-author {
+        font-size: 1em;
+    }
+
+    .dot {
+        height: 12px;
+        width: 12px;
+    }
+
+    button.prev,
+    button.next {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonial-text {
+        font-size: 1em;
+    }
+
+    .testimonial-author {
+        font-size: 0.9em;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 3px;
+    }
+
+    button.prev,
+    button.next {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
 
 /***************Testimonials ends*********************/
 
 
 /********************Brands**********************/
 
-.brands{
+.brands {
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #e9e4e4;
-}
-.brands-container{
-    width:700px;
-    font-size: 25px;
+    padding: 50px 20px;
+    /* Add padding for better spacing */
     text-align: center;
+    /* Center-align text */
+}
+
+.brands-container {
+    max-width: 100%;
+    /* Adjust to maximum width */
+    width: 700px;
+    /* Set initial width */
+    font-size: 1.5em;
+    /* Adjust font size */
+    line-height: 1.6;
+    /* Improve line height for readability */
+    margin-bottom: 20px;
+    /* Add bottom margin for spacing */
+}
+
+.brands-image {
+    width: 100%;
+    max-width: 100%;
+    /* Ensure image stays within container */
+    margin-bottom: 20px;
+    /* Add bottom margin for spacing */
+}
+
+.brands-image img {
+    max-width: 100%;
+    /* Ensure image scales properly */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 10px;
+    /* Add border radius for aesthetics */
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 992px) {
+    .brands-container {
+        width: 90%;
+        /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .brands-container {
+        font-size: 1.2em;
+        /* Decrease font size for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .brands-container {
+        font-size: 1em;
+        /* Further decrease font size for mobile screens */
+    }
 }
 
 /****************Brands Ending**********************/
 
 /**************Start now*********************/
-
-.start_now{
+.start_now {
     margin: 0;
     text-align: center;
     background-color: #002366;
-    padding: 20px 20px;
+    padding: 50px 20px;
     color: white;
 }
-.start_now h1{
-    font-size: 40px;
+
+.start-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
-.start_now p{
-    font-size: 20px;
-    /* width: 200px; */
+
+.start_now h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
-.start_now button{
-    padding:10px 15px;
-    font-size: 18px;
+
+.start_now p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.start_now button {
+    padding: 12px 20px;
+    font-size: 1.1em;
     background-color: #002366;
-    color:white;
-    border: none;
+    color: white;
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
-    /* transition: background-color 0.3s ease, color 0.3s ease; */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.start_now button:hover{
+
+.start_now button:hover {
     background-color: #ff4d4d;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    color: #002366;
 }
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+    .start_now {
+        padding: 40px 10px;
+        /* Adjusted padding for smaller screens */
+    }
+
+    .start_now h1 {
+        font-size: 2em;
+        /* Decreased font size for smaller screens */
+    }
+
+    .start_now p {
+        font-size: 1em;
+        /* Decreased font size for smaller screens */
+    }
+
+    .start_now button {
+        font-size: 1em;
+        /* Decreased font size for smaller screens */
+    }
+}
+
+
 
 /*****************Start Now Ending**************/
 
 /**************Blogs start*************************/
-
 .blogs {
     padding: 50px 20px;
-    background-color: #f9f9f9; /* Background color for the section */
+    background-color: #f9f9f9;
+    /* Background color for the section */
 }
 
 .blogs-head {
@@ -690,12 +1256,14 @@ button.next {
 }
 
 .blogs-head h1 {
-    font-size: 2.5em; /* Bigger font size for the header */
+    font-size: 2.5em;
+    /* Bigger font size for the header */
 }
 
 .blogs-container {
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
+    /* Center the container */
 }
 
 .blogs-content {
@@ -713,7 +1281,8 @@ button.next {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 1;
     min-width: 300px;
-    max-width: calc(33.33% - 20px); /* Adjusting for spacing */
+    max-width: calc(33.33% - 20px);
+    /* Adjusting for spacing */
 }
 
 .blogs-card:hover {
@@ -747,13 +1316,248 @@ button.next {
     color: #555;
 }
 
-.blogs-card:hover .blogs-topic h1, .blogs-card:hover .blogs-descrip {
-    color: #002366; /* Change color on hover */
+.blogs-card:hover .blogs-topic h1,
+.blogs-card:hover .blogs-descrip {
+    color: #002366;
+    /* Change color on hover */
+}
+
+/* Media Queries */
+
+@media (max-width: 1000px) {
+    .blogs-card {
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .blogs-card {
+        max-width: calc(100% - 20px);
+    }
+
+    .blogs-head h1 {
+        font-size: 2em;
+        /* Adjusted font size for smaller screens */
+    }
+}
+
+
+/*******************BLogs Ends***********************/
+
+/******************Footer starts*****************/
+
+.footer {
+    background-color: #f2f2f2;
+    /* Light background color */
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-partner,
+.footer-com-careers,
+.footer-sol-insights,
+.footer-contact-form {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-partner img {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    margin: 10px auto;
     cursor: pointer;
-    /* background-color: #725454; */
-   
+    transition: transform 0.3s;
+}
+
+.footer-partner img:hover {
+    transform: scale(1.1);
+}
+
+.footer-company,
+.footer-careers,
+.footer-solution,
+.footer-insights {
+    margin-bottom: 20px;
+}
+
+.footer-company h1,
+.footer-careers h1,
+.footer-solution h1,
+.footer-insights h1,
+.footer-form h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.footer-company a,
+.footer-careers a,
+.footer-solution a,
+.footer-insights a {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-company a:hover,
+.footer-careers a:hover,
+.footer-solution a:hover,
+.footer-insights a:hover {
+    color: #002366;
+}
+
+.footer-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.footer-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4d4d;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-form button:hover {
+    background-color: #002366;
+}
+
+.footer-search {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-search input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.footer-search button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4d4d;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-search button:hover {
+    background-color: #002366;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social-links i {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-social-links i:hover {
+    color: #002366;
+}
+
+.footer-copyright {
+    background-color: #002366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
 }
 
 
 
-/*******************BLogs Ends***********************/
+/******************Footer Ends******************/
+/**********************Media queries***************/
+
+@media only screen and (max-width:1060px) {
+
+
+    .brands-container {
+        width: 650px;
+    }
+
+    .brands img {
+        width: 950px;
+    }
+}
+
+@media (max-width:970px) {
+    .brands-container {
+        width: 550px;
+    }
+
+    .brands img {
+        width: 850px
+    }
+}
+
+@media (max-width:870px) {
+    .brands-container {
+        width: 450px;
+    }
+
+    .brands img {
+        width: 700px;
+    }
+}
+
+@media (max-width:720px) {
+    .brands-container {
+        width: 350px;
+    }
+
+    .brands img {
+        width: 600px;
+    }
+}
+
+@media (max-width:670px) {
+    .brands-container {
+        width: 250px;
+    }
+
+    .brands img {
+        width: 500px;
+    }
+}
+
+@media (max-width:520px) {
+    .brands-container {
+        width: 150px;
+    }
+
+    .brands img {
+        width: 350px;
+    }
+}
